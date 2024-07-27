@@ -6,8 +6,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 gem 'rails',      '6.1.4.6'
+gem 'faker',    '2.11.0 '
 gem 'puma',       '5.3.1'
 gem 'bootstrap-sass', '3.4.1'
+gem 'will_paginate', '3.3.0'
+gem 'bootstrap-will_paginate', '1.0.0'
 gem 'sass-rails', '6.0.0'
 gem 'webpacker',  '5.0'
 gem 'bcrypt',  '3.1.13'
