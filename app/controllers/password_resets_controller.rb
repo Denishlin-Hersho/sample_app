@@ -66,4 +66,8 @@ class PasswordResetsController < ApplicationController
       redirect_to new_password_reset_url
     end
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> account-activation
