@@ -1,7 +1,7 @@
 class PasswordResetsController < ApplicationController
   before_action :get_user, only: [:edit, :update]
   before_action :valid_user, only: [:edit, :update]
-  # before_action :check_expiration, only: [:edit, :update]
+  before_action :check_expiration, only: [:edit, :update]
 
   def new
   end
@@ -57,7 +57,6 @@ class PasswordResetsController < ApplicationController
     unless (@user && @user.activated? && @user.authenticated?(:reset, params[:id]))
       redirect_to root_url
     end
-  end
 
   # Check expiration of reset token.
   def check_expiration
@@ -66,8 +65,5 @@ class PasswordResetsController < ApplicationController
       redirect_to new_password_reset_url
     end
   end
-<<<<<<< HEAD
+  end
 end
-=======
-end
->>>>>>> account-activation
