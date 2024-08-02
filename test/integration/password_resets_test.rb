@@ -4,6 +4,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     ActionMailer::Base.deliveries.clear
     @user = users(:michael)
   end
+
   test "password resets" do
     get new_password_reset_path
     assert_template 'password_resets/new'
