@@ -22,6 +22,7 @@ gem 'jbuilder',   '2.10.0'
 gem 'bootsnap',   '1.7.2', require: false
 gem "ffi", "< 1.17.0"
 gem 'rails-controller-testing'
+gem 'thor', '~> 1.3.1'
 
 group :development, :test do
   gem 'sqlite3', '1.4.2'

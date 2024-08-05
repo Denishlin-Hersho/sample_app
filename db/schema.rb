@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2024_08_01_104314) do
-=======
-ActiveRecord::Schema.define(version: 2024_08_02_034438) do
->>>>>>> user-microposts
-=======
-ActiveRecord::Schema.define(version: 2024_08_03_091641) do
+ActiveRecord::Schema.define(version: 2024_08_05_093052) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,7 +39,6 @@ ActiveRecord::Schema.define(version: 2024_08_03_091641) do
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
->>>>>>> user-microposts
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -55,6 +47,16 @@ ActiveRecord::Schema.define(version: 2024_08_03_091641) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "users", force: :cascade do |t|
