@@ -51,8 +51,8 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@other_user)
     assert_not @other_user.admin?
     patch user_path(@other_user), params: {
-      user: { password: "password", password_confirmation: "password", admin: FILL_IN } }
-    assert_not @other_user.FILL_IN.admin?
+      user: { password: "password", password_confirmation: "password", admin: false } }
+    assert_not @other_user.reload.admin?
   end
 
   test "should redirect destroy when not logged in" do
