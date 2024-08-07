@@ -4,7 +4,6 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     @user = users(:michael)
   end
 
-
   test "micropost interface" do
     log_in_as(@user)
     get root_path
